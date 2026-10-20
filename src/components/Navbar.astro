@@ -1,0 +1,138 @@
+<nav
+  id="navbar"
+  class="fixed left-0 top-0 z-50 w-full px-6 py-5
+         transition-all duration-500"
+>
+  <div
+    id="navbar-container"
+    class="mx-auto flex max-w-7xl items-center justify-between
+           rounded-full border border-transparent px-5 py-3
+           transition-all duration-500"
+  >
+    <!-- Logo -->
+    <a href="/" aria-label="Metanoia Studios - Inicio" class="shrink-0">
+      <img
+        src="src/assets/logo.svg"
+        alt="Metanoia Studios"
+        class="h-8 w-auto md:h-9"
+      />
+    </a>
+
+    <!-- Navegación desktop -->
+    <div class="hidden items-center gap-8 md:flex">
+      <a
+        href="#about"
+        class="font-[Inter] text-sm text-[#F5F3FF]/70
+               transition hover:text-[#F5F3FF]"
+      >
+        Sobre
+      </a>
+
+      <a
+        href="#proceso"
+        class="font-[Inter] text-sm text-[#F5F3FF]/70
+               transition hover:text-[#F5F3FF]"
+      >
+        Proceso
+      </a>
+
+      <a
+        href="#servicios"
+        class="font-[Inter] text-sm text-[#F5F3FF]/70
+               transition hover:text-[#F5F3FF]"
+      >
+        Servicios
+      </a>
+
+      <a
+        href="#contacto"
+        class="rounded-full bg-[#8B5CF6] px-5 py-2.5
+               font-[Inter] text-sm font-medium text-white
+               transition hover:bg-[#6D28D9]"
+      >
+        Hablemos
+      </a>
+    </div>
+
+    <!-- Botón móvil -->
+    <button
+      id="menu-button"
+      type="button"
+      aria-label="Abrir menú"
+      aria-expanded="false"
+      class="flex h-10 w-10 items-center justify-center
+             rounded-full border border-white/10
+             md:hidden"
+    >
+      <span class="sr-only">Abrir menú</span>
+
+      <div class="flex flex-col gap-1.5">
+        <span class="block h-px w-5 bg-[#F5F3FF]"></span>
+        <span class="block h-px w-5 bg-[#F5F3FF]"></span>
+      </div>
+    </button>
+  </div>
+
+  <!-- Menú móvil -->
+  <div
+    id="mobile-menu"
+    class="mx-auto mt-2 hidden max-w-7xl
+           rounded-3xl border border-white/10
+           bg-[#0D0B12]/95 p-6 backdrop-blur-xl md:hidden"
+  >
+    <div class="flex flex-col gap-6">
+      <a href="#about" class="font-[Inter] text-lg text-[#F5F3FF]"> Sobre </a>
+
+      <a href="#proceso" class="font-[Inter] text-lg text-[#F5F3FF]">
+        Proceso
+      </a>
+
+      <a href="#servicios" class="font-[Inter] text-lg text-[#F5F3FF]">
+        Servicios
+      </a>
+
+      <a
+        href="#contacto"
+        class="mt-2 rounded-full bg-[#8B5CF6] px-5 py-3
+               text-center font-[Inter] font-medium text-white"
+      >
+        Hablemos
+      </a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const navbar = document.querySelector("#navbar-container");
+  const menuButton = document.querySelector("#menu-button");
+  const mobileMenu = document.querySelector("#mobile-menu");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 40) {
+      navbar?.classList.add(
+        "border-white/10",
+        "bg-[#0D0B12]/80",
+        "backdrop-blur-xl",
+      );
+    } else {
+      navbar?.classList.remove(
+        "border-white/10",
+        "bg-[#0D0B12]/80",
+        "backdrop-blur-xl",
+      );
+    }
+  });
+
+  menuButton?.addEventListener("click", () => {
+    const isOpen = mobileMenu?.classList.toggle("hidden");
+
+    menuButton.setAttribute("aria-expanded", String(!isOpen));
+  });
+
+  mobileMenu?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileMenu.classList.add("hidden");
+      menuButton?.setAttribute("aria-expanded", "false");
+    });
+  });
+</script>

@@ -1,0 +1,69 @@
+---
+import Layout from "../layouts/Layout.astro";
+import "../styles/global.css";
+
+import BusinessType from "../components/configurator/BussinesType.astro";
+import SectionSelector from "../components/configurator/SectionSelector.astro";
+import ThemeSelector from "../components/configurator/ThemeSelector.astro";
+import SitePreview from "../components/configurator/SitePreview.astro";
+import ConfiguratorSummary from "../components/configurator/ConfiguratorSummary.astro";
+---
+
+<Layout>
+  <main class="min-h-screen bg-[#0D0B12] text-[#F5F3FF]">
+    <!-- Header -->
+    <section class="px-6 pb-16 pt-32 md:pb-20 md:pt-40">
+      <div class="mx-auto max-w-7xl">
+        <div class="flex items-center gap-4">
+          <span class="h-px w-12 bg-[#8B5CF6]"></span>
+
+          <span
+            class="font-[Inter] text-xs font-medium uppercase tracking-[0.3em] text-[#C4B5FD]"
+          >
+            Configura tu sitio
+          </span>
+        </div>
+
+        <h1
+          class="mt-8 max-w-5xl font-[Space_Grotesk] text-5xl font-semibold leading-[0.95] tracking-tight md:text-7xl lg:text-8xl"
+        >
+          Tu negocio.
+          <span class="text-[#8B5CF6]">Tu sitio.</span>
+        </h1>
+
+        <p
+          class="mt-8 max-w-2xl font-[Inter] text-lg leading-relaxed text-[#918CA3] md:text-xl"
+        >
+          Elige lo que necesita tu negocio y descubre cómo podría verse tu
+          próxima web.
+        </p>
+      </div>
+    </section>
+
+    <!-- Configurador -->
+    <section class="px-6 pb-24 md:pb-32">
+      <div class="mx-auto max-w-7xl">
+        <div class="grid gap-8 lg:grid-cols-[380px_1fr]">
+          <!-- Panel de configuración -->
+          <aside class="space-y-6">
+            <BusinessType />
+
+            <SectionSelector />
+
+            <ThemeSelector />
+          </aside>
+
+          <!-- Preview -->
+          <div class="lg:sticky lg:top-8 lg:self-start">
+            <SitePreview />
+          </div>
+        </div>
+
+        <!-- Resumen -->
+        <ConfiguratorSummary />
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<script src="../scripts/configurator.js"></script>

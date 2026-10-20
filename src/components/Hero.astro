@@ -1,0 +1,50 @@
+<section class="relative min-h-screen overflow-hidden">
+  <div
+    class="absolute inset-0 bg-[url('../assets/img/hero.webp')] bg-cover bg-center"
+  >
+  </div>
+
+  <!-- Overlay oscuro -->
+  <div class="absolute inset-0 bg-[#0D0B12]/70"></div>
+
+  <!-- Contenido -->
+  <div
+    class="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 text-center"
+  >
+    <div class="relative mb-10 flex items-center justify-center">
+      <!-- Halo -->
+      <div
+        class="absolute left-1/2 top-1/2
+           h-72 w-72 -translate-x-1/2 -translate-y-1/2
+           rounded-full bg-[#fff]/30 blur-xl
+           md:h-96 md:w-96"
+      >
+      </div>
+
+      <!-- Logo -->
+      <img
+        src="src/assets/logo.svg"
+        alt="Metanoia Studios"
+        class="relative z-10 w-[22rem] max-w-[85vw] md:w-[32rem]"
+      />
+    </div>
+
+    <p
+      class="max-w-2xl font-[Inter] text-lg leading-relaxed text-[#F5F3FF] md:text-xl"
+    >
+      Diseñamos sitios web que hacen que tu negocio se vea tan bien como
+      realmente es.
+    </p>
+
+    <!-- Indicador para continuar -->
+    <a
+      href="#about"
+      class="absolute bottom-10 flex flex-col items-center gap-3 text-sm
+             text-[#C4B5FD] transition hover:text-[#F5F3FF]"
+    >
+      <span>Conocenos</span>
+
+      <span class="animate-bounce text-xl"> ↓ </span>
+    </a>
+  </div>
+</section>
